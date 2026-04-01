@@ -1,0 +1,19 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import { getCollection } from 'astro:content';
+
+const posts = await getCollection('blog');
+---
+<BaseLayout title="Chào mừng bạn!">
+  <h1>Xin chào, mình là Thy 👋</h1>
+  <p>Đây là blog cá nhân của mình, nơi mình chia sẻ về hành trình học CS tại VGU.</p>
+  
+  <h2>Bài viết mới nhất:</h2>
+  <ul>
+    {posts.map(post => (
+      <li>
+        <a href={`/blog/${post.slug}`}>{post.data.title}</a> — <span>{post.data.date}</span>
+      </li>
+    ))}
+  </ul>
+</BaseLayout>
