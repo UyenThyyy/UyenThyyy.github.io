@@ -1,5 +1,5 @@
 ---
-title: "Chào thế giới!"
+title: "Chào mọi người!"
 date: "2026-04-01"
 ---
 
